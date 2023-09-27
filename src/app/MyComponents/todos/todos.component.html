@@ -1,0 +1,14 @@
+<div class="my-3">
+  <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+</div>
+<div class="container col-md-8">
+  <h3>List of your todos</h3>
+
+  <app-todo-item
+    *ngFor="let todo of todos; index as i"
+    [i]="i"
+    [todo]="todo"
+    (completeTodo)="todoComplete($event)"
+    (deleteTodo)="todoDelete($event)"
+  ></app-todo-item>
+</div>
